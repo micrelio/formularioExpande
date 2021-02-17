@@ -19,6 +19,10 @@ $('#form-close, .form-overlay').click(function(e) {
   bindFormClick();
 });
 
+
+
+
+
 function toggleForm(){
   console.log('trogle');
   $(formContainer).toggleClass('expand');
@@ -56,8 +60,8 @@ $('form').submit(function() {
   if (!formError) {
     console.log('no error1');
 
-    $('body').addClass('form-submitted');
-     $('#form-head').addClass('form-submitted'); 
+    // $('body').addClass('form-submitted');
+    //  $('#form-head').addClass('form-submitted'); 
     setTimeout(function(){
       console.log('timer');
 
