@@ -10,6 +10,7 @@
 // Incluir libreria de recaptcha de Google
 require_once "recaptchalib.php";
 
+
 // tu secret key
 $publicKey = "6LcBgVoaAAAAAAEt7-fWXw1MomP4kWSywzYaMii5";
 $secret = "6LcBgVoaAAAAAJ2nLbx3BMR7DShc077ZVSLAross";
@@ -43,15 +44,15 @@ if ($response != null && $response->success) {
     foreach ($_POST as $key => $value) {
         $body .= "{$key}: {$value}\n";
     }
-    if (mail($to, $subject, $body, $headers)) {
-        $error = false;
-        echo "ENVIADO";
-        $message = 'Enviado con exito';
-    } else {
-        echo "ERROR1";
-        $error = true;
-        $message = 'Error al enviar el email';
-    }
+    // if (mail($to, $subject, $body, $headers)) {
+    //     $error = false;
+    //     echo "ENVIADO";
+    //     $message = 'Enviado con exito';
+    // } else {
+    //     echo "ERROR1";
+    //     $error = true;
+    //     $message = 'Error al enviar el email';
+    // }
 } else {
 
     if ($_POST) {

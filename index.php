@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,74 +26,46 @@
 </head>
 
 <body id="body">
-<div class="container">
+    <div class="container">
 
 
-    <!-- partial:index.partial.html -->
-    <div class='form-overlay'></div>
-    <div class='icon fa fa-pencil' id='form-container'>
-        <span class='icon fa fa-close' id='form-close'></span>
-        <div id='form-content'>
-            <div id='form-head'>
-                <h1 class='pre'>Get in touch</h1>
-                <p class='pre'>Good choice...</p>
-                <h1 class='post'>Thanks!</h1>
-                <p class='post'>I'll be in touch ASAP</p>
+        <!-- partial:index.partial.html -->
+        <div class='form-overlay'></div>
+        <div class='icon fa fa-pencil' id='form-container'>
+            <span class='icon fa fa-close' id='form-close'></span>
+            <div id='form-content'>
+                <div id='form-head'>
+                    <h1 class='pre'>Get in touch</h1>
+                    <p class='pre'>Good choice...</p>
+                    <h1 class='post'>Thanks!</h1>
+                    <p class='post'>I'll be in touch ASAP</p>
+                </div>
+
+                <div class="">
+                    <?php
+                    if ($showMessage) {
+                        echo !$error ? '<div class="bs-example-bg-classes"><p class="bg-success text-center">' . $message . '</p></div>' : '';
+                        echo $error ? ' <div class="bs-example-bg-classes"><p class="bg-danger text-center">' . $message . '</p></div>' : '';
+                    }
+                    ?>
+
+                </div>
+
+                <form role="form" action="./php/envio.php" method="post" class="formularioContacto">
+                    <input class="input name" placeholder="Nombre"  type="text" name="Nombre" />
+                    <input class="input email" placeholder="Email" id="email" type="email" name="Email" />
+                    <input class="input phone" placeholder="Telefono" id="phone" type="tel" name="Telefono" />
+                    <textarea class="input message" rows="10" cols="40" name="comentario" id="comment"></textarea>
+                    <!--pueden cambiar el lenguaje con el parametro hl-->
+                    <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+                    <!--El site key de su sitio-->
+                    <!-- <input class="input g-recaptcha" data-sitekey="<?php #echo $publicKey; ?>"placeholder="" id="" type="checkbox" name="" /> -->
+
+                    <div class="input g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
+                    <input class='input submit' type='submit' value='Send Message'>
+                    <button type="submit" class="fa fa-paper-plane "></button>
+               </form>
             </div>
-
-            <div class="">
-    <?php
-    if ($showMessage) {
-        echo !$error ? '<div class="bs-example-bg-classes"><p class="bg-success text-center">' . $message . '</p></div>' : '';
-        echo $error ? ' <div class="bs-example-bg-classes"><p class="bg-danger text-center">' . $message . '</p></div>' : '';
-    }
-    ?>
-
-</div>
-
-<form role="form" action="./php/envio.php" method="post" class="formularioContacto">
-    <div class="bloqueEntrada">
-        <label for="name">Nombre:</label>
-        <div>
-            <input class="name" placeholder="Nombre" id="name" type="text" name="Nombre" />
-        </div>
-    </div>
-    <div class="bloqueEntrada">
-        <label for="email" class=" ">Email:</label>
-        <div class="">
-            <input class="email" placeholder="Email" id="email" type="email" name="Email" />
-        </div>
-    </div>
-    <div class="bloqueEntrada">
-        <label for="phone" class=" ">Telefono:</label>
-        <div class="">
-            <input class="phone" placeholder="Telefono" id="phone" type="tel" name="Telefono" />
-        </div>
-    </div>
-    <div class="bloqueEntrada">
-        <label for="comment" class=" ">Mensaje :</label>
-        <div class="">
-            <textarea class="message" rows="10" cols="40" name="comentario" id="comment"></textarea>
-        </div>
-    </div>
-    <div class="bloqueEntrada">
-        <div class="">
-            <!--pueden cambiar el lenguaje con el parametro hl-->
-            <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
-            <!--El site key de su sitio-->
-            <div class="g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
-        </div>
-    </div>
-    <div class="">
-        <div class="">
-        <input class='input submit' type='submit' value='Send Message'>
-
-            <button type="submit" class="fa fa-paper-plane "></button>
-        </div>
-    </div>
-
-</form>
-</div>
 
 
 
@@ -126,11 +95,11 @@
 
 
 
-          
+
             <!-- partial -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-            <!-- <script src="jquery.min.js"></script> -->
+            <script src="jquery.min.js"></script>
             <script src="script.js"></script>
 
 </body>
