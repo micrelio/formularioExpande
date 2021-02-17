@@ -61,7 +61,7 @@
                     <!--El site key de su sitio-->
                     <!-- <input class="input g-recaptcha" data-sitekey="<?php #echo $publicKey; ?>"placeholder="" id="" type="checkbox" name="" /> -->
 
-                    <div class="input g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
+                    <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
                     <input class='input submit' type='submit' value='Send Message'>
                     <button type="submit" class="fa fa-paper-plane "></button>
                </form>
