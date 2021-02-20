@@ -32,7 +32,7 @@ $("form").submit(function () {
   var form = $(this);
   form.find(".form-error").removeClass("form-error");
   // con esto hace el efecto pero no lo envia
-  // var formError = false;
+  var formError = false;
   console.log("1");
   form.find(".input").each(function () {
     console.log("2");
@@ -54,13 +54,13 @@ $("form").submit(function () {
   });
 
   if (!formError) {
-    // console.log('no error1');
-    // $('body').addClass('form-submitted');
-    //  $('#form-head').addClass('form-submitted');
-    // setTimeout(function(){
-    //   console.log('timer');
-    //   $(form).trigger("reset");
-    // }, 1000);
+    console.log('no error1');
+    $('body').addClass('form-submitted');
+     $('#form-head').addClass('form-submitted');
+    setTimeout(function(){
+      console.log('timer');
+      $(form).trigger("reset");
+    }, 1000);
   }
   return false;
 });

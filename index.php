@@ -80,7 +80,7 @@
 
 
 
-    <?php include('./php/envio.php'); 
+    <?php include('./php/configuracion.php'); 
     ?>
 
     <link rel="stylesheet" href="./styles/style.css">
@@ -129,8 +129,8 @@
                                                                         ?>"placeholder="" id="" type="checkbox" name="" /> -->
 
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
-                    <!-- <input class='input submit' type='submit' value='Send Message'> -->
-                    <button type="submit" class="fa fa-paper-plane "></button>
+                    <!-- <input class='input submit' type='submit' value='Send Message' > -->
+                    <button class='input submit' type="submit" class="fa fa-paper-plane " value='Send Message'></button>
                     <input type="reset" value="Borrar Datos" /> &nbsp; &nbsp;
 
                 </form>
