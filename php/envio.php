@@ -27,9 +27,14 @@ if ($_POST["g-recaptcha-response"]) {
         $_POST["g-recaptcha-response"]
     );
 }
+  
 $showMessage = false;
+
 // Envio de Email
 if ($response != null && $response->success) {
+
+ 
+
     $showMessage = true;
     // a quien se envia el email
     $to = "info@microdeveloper.es";
@@ -44,15 +49,23 @@ if ($response != null && $response->success) {
     foreach ($_POST as $key => $value) {
         $body .= "{$key}: {$value}\n";
     }
-    // if (mail($to, $subject, $body, $headers)) {
-    //     $error = false;
-    //     echo "ENVIADO";
-    //     $message = 'Enviado con exito';
-    // } else {
-    //     echo "ERROR1";
-    //     $error = true;
-    //     $message = 'Error al enviar el email';
-    // }
+    if (mail($to, $subject, $body, $headers)) {
+         // current time
+ echo date('h:i:s') . "\n";
+
+ // sleep for 10 seconds
+ sleep(10);
+ 
+ // wake up !
+ echo date('h:i:s') . "\n";
+        $error = false;
+        // echo "ENVIADO";
+        $message = 'Enviado con exito';
+    } else {
+        echo "ERROR1";
+        $error = true;
+        $message = 'Error al enviar el email';
+    }
 } else {
 
     if ($_POST) {
