@@ -1,68 +1,3 @@
-<?php
-
-/**
- * Created by PhpStorm.
- * User: juliomorales
- * Website: http://www.nworldt.net
- * Date: 21/07/16
- * Time: 11:44 PM
- */
-// Incluir libreria de recaptcha de Google
-// require_once "./php/recaptchalib.php";
-
-// // tu secret key
-// $publicKey = "6LcBgVoaAAAAAAEt7-fWXw1MomP4kWSywzYaMii5";
-// $secret = "6LcBgVoaAAAAAJ2nLbx3BMR7DShc077ZVSLAross";
-
-
-// $response = null;
-
-// // comprueba la clave secreta
-// $reCaptcha = new ReCaptcha($secret);
-// if ($_POST["g-recaptcha-response"]) {
-//     $response = $reCaptcha->verifyResponse(
-//         $_SERVER["REMOTE_ADDR"],
-//         $_POST["g-recaptcha-response"]
-//     );
-// }
-// $showMessage = false;
-// // Envio de Email
-// if ($response != null && $response->success) {
-
-//     $showMessage = true;
-//     // a quien se envia el email
-//     $to = "info@microdeveloper.es";
-//     // sujeto del email
-//     $subject = "Micrelio web";
-//     // quien envia el correo
-//     $headers = "From: web@microdeveloper.es" . "\r\n";
-//     // quito el valor del recaptcha
-//     unset($_POST["g-recaptcha-response"]);
-
-
-
-    // $body = '';
-    // foreach ($_POST AS $key => $value)
-    // {
-    //     $body .= "{$key}: {$value}\n";
-    // }
-    // creo que el `roximo if sobra
-    // if (mail($to,$subject,$body,$headers)){
-    //     $error = false;
-    //     $message = 'Enviado con exito';
-    // }else {
-    //     $error = true;
-    //     $message = 'Error al enviar el email';
-    // }
-// } else {
-//     if ($_POST) {
-//         $showMessage = true;
-//         $error = true;
-//         $message = 'Error al enviar el formulario intente de nuevo';
-//     }
-// }
-// ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,7 +15,7 @@
 
 
 
-    <?php include('./php/configuracion.php'); 
+    <?php include('./php/configuracion.php');
     ?>
 
     <link rel="stylesheet" href="./styles/style.css">
@@ -88,6 +23,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="./styles/normalize.min.css">
+    <script type="text/javascript" src="./script.js" ></script>
 
 
     <link rel="stylesheet" href="./styles/googleApis.css" type="text/css">
@@ -97,6 +33,11 @@
 
     <!-- <script src="jquery.min.js"></script> -->
 
+<script>
+function calcular(){
+	var contadorChar= document.getElementById("contador-char").innerHTML=1000 -document.formulario.comentario.value.length;
+}
+</script>
 </head>
 
 <body id="body">
@@ -117,11 +58,17 @@
                 </div>
 
 
-                <form role="form" action="" method="post" class="formularioContacto">
+                <form role="form" action="./php/envio.php" method="post" id="formulario" name="formulario" class="formularioContacto">
                     <input class="input name" placeholder="Nombre" type="text" name="Nombre" />
                     <input class="input email" placeholder="Email" id="email" type="email" name="Email" />
                     <input class="input phone" placeholder="Telefono" id="phone" type="tel" name="Telefono" />
-                    <textarea class="input message" rows="10" cols="40" name="comentario" id="comment"></textarea>
+                    <textarea class="input message" rows="10" cols="40" maxlength="1000" name="comentario" id="comentario" name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea><br />
+                    <p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
+                    <br />
+                    <br />
+
+
+
                     <!--pueden cambiar el lenguaje con el parametro hl-->
                     <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
                     <!--El site key de su sitio-->
@@ -130,7 +77,7 @@
 
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
                     <!-- <input class='input submit' type='submit' value='Send Message' > -->
-                    <button class='input submit' type="submit" class="fa fa-paper-plane " value='Send Message'></button>
+                    <button class='input submit' type="buton" class="fa fa-paper-plane " value='Send Message'></button>
                     <input type="reset" value="Borrar Datos" /> &nbsp; &nbsp;
 
                 </form>
