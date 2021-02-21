@@ -243,6 +243,9 @@ input, select, textarea {
           animation: error 0.8s ease;
   background: rgba(0, 0, 0, 0.7);
 }
+.input.color-error {
+   background: rgba(0, 0, 0, 0.7);
+}
 
 select option {
   background: #f72f4e;

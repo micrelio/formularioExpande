@@ -1,14 +1,31 @@
 var formContainer = $("#form-container");
-bindFormClick();
+//para abrir con boton descomentar esta linea
+// bindFormClick();
+//---------------------------------------
 //Opening the form
 function bindFormClick() {
+  console.log('ole-ole');
   $(formContainer).on("click", function (e) {
-    e.preventDefault();
+    console.log(e)
+       e.preventDefault();
+
     toggleForm();
     //Ensure container doesn't togleForm when open
     $(this).off();
   });
 }
+
+//para abrir de boton descomentar esta fincion
+open();
+function open() {
+  console.log('oooooooooooooooooooooo');
+  $(formContainer).toggleClass("expand");
+  $(formContainer).children().toggleClass("expand");
+    //Ensure container doesn't togleForm when open
+    $(this).off();
+}
+//-------------------------------
+
 
 //Closing the form
 $("#form-close, .form-overlay").click(function (e) {
@@ -105,14 +122,10 @@ function validarFormulario(){
 	if(!nombre.value){
     // nombre.find(".nombre-error").removeClass("nombre-error");
     // var formError = false;
-
     $(nombre).addClass("form-error");
-    // $(nombre).select();
-    //       formError = true;
-    //       return false;
+    $(nombre).addClass("color-error");
     setTimeout(function(){ alert("Escriba su nombre por favor."); }, 1000);
-
-    
+    setTimeout(function(){ $(nombre).removeClass("form-error"); }, 1000);
 	nombre.focus();
 	verificar=false;
 	return false;
@@ -152,6 +165,8 @@ function validarFormulario(){
 	// }
 
 	else if(!email.value){
+		$(email).addClass("form-error");
+
 	alert("Escriba su email por favor.");
 	email.focus();
 	verificar=false;
@@ -163,12 +178,12 @@ function validarFormulario(){
 	verificar=false;
 	return false;
 	}
-	else if((webSite.value!="")&& !expRegUrl.exec(webSite.value)){
-	alert("Escriba un formato de sitio web valido por favor.");
-	webSite.focus();
-	verificar=false;
-	return false;
-	}
+	// else if((webSite.value!="")&& !expRegUrl.exec(webSite.value)){
+	// alert("Escriba un formato de sitio web valido por favor.");
+	// webSite.focus();
+	// verificar=false;
+	// return false;
+	// }
 	else if(!telefono.value){
 	alert("Escriba un n\u00famero de tel\u00E9fono por favor.");
 	telefono.focus();
