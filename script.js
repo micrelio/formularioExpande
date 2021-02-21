@@ -1,7 +1,11 @@
 $(document).ready(function () {
 	console.log('inicio');
-	esperaEntrada();
-
+	// espera();
+	if ($('#h').length) {
+		$('#h').delay(100).fadeOut('slow', function() {
+		//   $(this).remove();
+		});
+	  }
 
 
 });
@@ -49,25 +53,41 @@ function toggleForm() {
   // $(".form-submitted").removeClass("form-submitted");
 }
 
-function esperaEntrada() {
+function espera() {
+	$("#h")
+	.add();
+
 	$("#h")
 	.delay(500)
+	.fadeIn("slow");
+	$("#h")
+	.delay(1000)
 	.fadeOut("slow", function () {
 	  console.log("dentro");
 	
 	//   $("#h").remove();
 	});
+
+
+
 }
 
-function esperaSalida() {
-	$("#h")
-	.delay(500)
-	.fadeIn("slow", function () {
-	  console.log("dentro");
+// function esperaSalida() {
+// 	 $("#h")
+// 	.delay(500)
+// 	.fadeIn("slow");
 	
-	//   $("#h").remove();
-	});
-}
+// 	$("#h")
+// 	.delay(500)
+// 	.fadeOut("slow");
+// 	// $("#h")
+// 	// .delay(1000)
+// 	// .fadeIn("slow", function () {
+// 	//   console.log("dentro");
+	
+// 	// //   $("#h").remove();
+// 	// });
+// }
 
 // //Form validation
 // $("form").submit(function () {
@@ -142,6 +162,7 @@ function validarFormulario() {
   //   console.log("2");
 
   if (!nombre.value) {
+	espera();
         $(nombre).addClass("form-error");
     $(nombre).addClass("color-error");
     setTimeout(function () {
@@ -269,7 +290,7 @@ function validarFormulario() {
   }
 
   if (verificar == true) {
-	esperaSalida();
+	espera();
 
     $("body").addClass("form-submitted");
     $("#form-head").addClass("form-submitted");

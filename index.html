@@ -114,9 +114,7 @@ if ($response != null && $response->success) {
     <!-- <script src="jquery.min.js"></script> -->
 
 
-    <script type="text/javascript">
-
-    </script>
+    <script type="text/javascript" src="/js/botonEnvio.js"></script>
 
 </head>
 
@@ -150,9 +148,8 @@ if ($response != null && $response->success) {
                     <input class="input email" placeholder="Email" id="email" type="email" name="Email" />
                     <input class="input phone" placeholder="Telefono" id="telefono" type="tel" name="Telefono" />
                     <textarea class="input message" rows="10" cols="40" maxlength="1000" id="comentario"
-                        name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea><br />
+                        name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea>
                     <p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
-                    <br />
                     <br />
 
 
@@ -165,12 +162,19 @@ if ($response != null && $response->success) {
                     <input type="checkbox" id="terms">
                     <label for="terms">He leído y acepto <a href="">los terminos y condiciones.</a></label>
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
-                    <button type="button" name="enviar" id="enviar" class="canbio">Enviar</button>&nbsp;&nbsp;&nbsp;
 
 
-                    <!-- <input class='input submit' type='submit' value='Send Message' > -->
-                    <!-- <button class='input submit' type="buton" class="fa fa-paper-plane " value='Send Message'></button> -->
-                    <input type="reset" value="Borrar Datos" /> &nbsp; &nbsp;
+                    <!-- <div class="text-box">
+                        <a href="#" class="btn btn-white btn-animate">click me</a>
+                    </div> -->
+
+
+                    <button class="fa fa-paper-plane btn btn-white btn-animate" type="button" name="enviar"
+                        id="enviar">Enviar</button>&nbsp;&nbsp;&nbsp;
+
+                    <!-- <input class='input submit' type='submit' value='Send Message' >
+                    <button class='input submit' type="buton" class="fa fa-paper-plane " value='Send Message'></button> -->
+                    <input class="borrar" type="reset" value="Borrar Datos" /> &nbsp; &nbsp;
 
                 </form>
             </div>
