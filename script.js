@@ -1,29 +1,15 @@
 var formContainer = $("#form-container");
-// bindFormClick();
+bindFormClick();
 //Opening the form
 function bindFormClick() {
-  console.log('ole-ole');
   $(formContainer).on("click", function (e) {
-    console.log(e)
-       e.preventDefault();
-
+    e.preventDefault();
     toggleForm();
     //Ensure container doesn't togleForm when open
     $(this).off();
   });
 }
-open();
-function open() {
-  // e.preventDefault();
-  // e.preventDefault();
 
-  // toggleForm();
-  $(formContainer).toggleClass("expand");
-  $(formContainer).children().toggleClass("expand");
-
-    //Ensure container doesn't togleForm when open
-    $(this).off();
-}
 //Closing the form
 $("#form-close, .form-overlay").click(function (e) {
   e.stopPropagation();
