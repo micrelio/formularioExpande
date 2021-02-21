@@ -1,5 +1,9 @@
 $(document).ready(function () {
-  //al cargar el documento se activa esto
+	console.log('inicio');
+	esperaEntrada();
+
+
+
 });
 
 var formContainer = $("#form-container");
@@ -22,7 +26,6 @@ function bindFormClick() {
 //para abrir de boton descomentar esta fincion
 open();
 function open() {
-  console.log("oooooooooooooooooooooo");
   $(formContainer).toggleClass("expand");
   $(formContainer).children().toggleClass("expand");
   //Ensure container doesn't togleForm when open
@@ -46,15 +49,24 @@ function toggleForm() {
   // $(".form-submitted").removeClass("form-submitted");
 }
 
-espera();
-function espera() {
-  $("#preloader")
-    .delay(500)
-    .fadeOut("slow", function () {
-      console.log("dentro");
+function esperaEntrada() {
+	$("#h")
+	.delay(500)
+	.fadeOut("slow", function () {
+	  console.log("dentro");
+	
+	//   $("#h").remove();
+	});
+}
 
-      $(this).remove();
-    });
+function esperaSalida() {
+	$("#h")
+	.delay(500)
+	.fadeIn("slow", function () {
+	  console.log("dentro");
+	
+	//   $("#h").remove();
+	});
 }
 
 // //Form validation
@@ -257,14 +269,7 @@ function validarFormulario() {
   }
 
   if (verificar == true) {
-    console.log("true");
-
-    var corazon = document.querySelector("#h");
-
-    corazon.setAttribute("class", "espera");
-    setTimeout(function () {
-      corazon.removeAttribute("class", "espera");
-    }, 1000);
+	esperaSalida();
 
     $("body").addClass("form-submitted");
     $("#form-head").addClass("form-submitted");

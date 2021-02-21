@@ -76,7 +76,7 @@ if ($response != null && $response->success) {
         $message = 'Error al enviar el formulario intente de nuevo';
     }
 }
-?>  
+?>
 
 
 <!DOCTYPE html>
@@ -97,7 +97,7 @@ if ($response != null && $response->success) {
 
 
     <?php#  include('./php/configuracion.php');
-    ?> 
+    ?>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./font-awesome/font-awesome.min.css">
 
@@ -115,13 +115,14 @@ if ($response != null && $response->success) {
 
 
     <script type="text/javascript">
-  
+
     </script>
- 
+
 </head>
 
-<body id="body"  >
-    <div id="preloader"></div>
+<body id="body">
+    <!-- <div id="preloader"></div> -->
+    <div id="h"></div>
 
 
     <div class="container">
@@ -133,12 +134,11 @@ if ($response != null && $response->success) {
             <span class='icon fa fa-close' id='form-close'></span>
             <div id='form-content'>
                 <div id='form-head'>
-                    <h1 class='pre'>Get in touch</h1>
-                    <p class='pre'>Good choice...</p>
-                    <h1 class='post'>Thanks!</h1>
-                    <p class='post'>I'll be in touch ASAP</p>
+                    <h1 class='pre'>CONTACTO</h1>
+                    <p class='pre'>Micro Developer</p>
+                    <h1 class='post'>Gracias!</h1>
+                    <p class='post'>Le contestaré con mayor brevedad posible.</p>
                 </div>
-                <div id="h"></div>
 
 
                 <form role="form" action="" method="post" id="formulario" name="formulario" class="formularioContacto">
@@ -149,7 +149,8 @@ if ($response != null && $response->success) {
 
                     <input class="input email" placeholder="Email" id="email" type="email" name="Email" />
                     <input class="input phone" placeholder="Telefono" id="telefono" type="tel" name="Telefono" />
-                    <textarea class="input message" rows="10" cols="40" maxlength="1000" id="comentario" name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea><br />
+                    <textarea class="input message" rows="10" cols="40" maxlength="1000" id="comentario"
+                        name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea><br />
                     <p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
                     <br />
                     <br />
@@ -161,7 +162,8 @@ if ($response != null && $response->success) {
                     <!--El site key de su sitio-->
                     <!-- <input class="input g-recaptcha" data-sitekey="<?php #echo $publicKey; 
                                                                         ?>"placeholder="" id="" type="checkbox" name="" /> -->
-
+                    <input type="checkbox" id="terms">
+                    <label for="terms">He leído y acepto <a href="">los terminos y condiciones.</a></label>
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
                     <button type="button" name="enviar" id="enviar" class="canbio">Enviar</button>&nbsp;&nbsp;&nbsp;
 
@@ -181,7 +183,7 @@ if ($response != null && $response->success) {
                 echo !$error ? '<div class="bs-example-bg-classes"><p class="bg-success text-center">' . $message . '</p></div>' : '';
                 echo $error ? ' <div class="bs-example-bg-classes"><p class="bg-danger text-center">' . $message . '</p></div>' : '';
             }
-            ?> 
+            ?>
 
         </div>
 
@@ -207,7 +209,7 @@ if ($response != null && $response->success) {
         <input class='input submit' type='submit' value='Send Message'>
       </form> -->
 
-      <script async type="text/javascript" src="./script.js"></script>
+        <script async type="text/javascript" src="./script.js"></script>
 
 
 
@@ -218,9 +220,9 @@ if ($response != null && $response->success) {
 
 </body>
 
- 
 
- 
 
- 
+
+
+
 </html>
