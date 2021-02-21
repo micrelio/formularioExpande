@@ -36,7 +36,6 @@ function open() {
   $(this).off();
 }
 //-------------------------------
-
 //Closing the form
 $("#form-close, .form-overlay").click(function (e) {
   e.stopPropagation();
@@ -44,7 +43,6 @@ $("#form-close, .form-overlay").click(function (e) {
   toggleForm();
   bindFormClick();
 });
-
 function toggleForm() {
   // console.log("trogle");
   $(formContainer).toggleClass("expand");
@@ -52,7 +50,6 @@ function toggleForm() {
   // $("body").toggleClass("show-form-overlay");
   // $(".form-submitted").removeClass("form-submitted");
 }
-
 function espera() {
 	$("#h")
 	.add();
@@ -67,10 +64,24 @@ function espera() {
 	
 	//   $("#h").remove();
 	});
-
-
-
 }
+
+//---boton envio---------------------
+const button = document.querySelector('.button');
+const submit = document.querySelector('.submit');
+
+function toggleClass() {
+	this.classList.toggle('active');
+}
+
+function addClass() {
+	this.classList.add('finished');
+}
+
+button.addEventListener('click', toggleClass);
+button.addEventListener('transitionend', toggleClass);
+button.addEventListener('transitionend', addClass);
+//-----------------------------------------------------
 
 // function esperaSalida() {
 // 	 $("#h")
@@ -166,7 +177,7 @@ function validarFormulario() {
         $(nombre).addClass("form-error");
     $(nombre).addClass("color-error");
     setTimeout(function () {
-      alert("Escriba su nombre por favor.");
+    //   alert("Escriba su nombre por favor.");
     }, 1000);
     setTimeout(function () {
       $(nombre).removeClass("form-error");
@@ -212,7 +223,7 @@ function validarFormulario() {
     $(email).addClass("form-error");
     $(email).addClass("color-error");
     setTimeout(function () {
-      alert("Escriba su email por favor.");
+    //   alert("Escriba su email por favor.");
     }, 1000);
     setTimeout(function () {
       $(email).removeClass("form-error");
@@ -224,7 +235,7 @@ function validarFormulario() {
     $(email).addClass("form-error");
     $(email).addClass("color-error");
     setTimeout(function () {
-      alert("Escriba un email valido por favor.");
+    //   alert("Escriba un email valido por favor.");
     }, 1000);
     setTimeout(function () {
       $(email).removeClass("form-error");
@@ -243,7 +254,7 @@ function validarFormulario() {
     $(telefono).addClass("form-error");
     $(telefono).addClass("color-error");
     setTimeout(function () {
-      alert("Escriba un n\u00famero de tel\u00E9fono por favor.");
+    //   alert("Escriba un n\u00famero de tel\u00E9fono por favor.");
     }, 1000);
     setTimeout(function () {
       $(telefono).removeClass("form-error");
@@ -255,7 +266,7 @@ function validarFormulario() {
     $(telefono).addClass("form-error");
     $(telefono).addClass("color-error");
     setTimeout(function () {
-      alert("el campo tel\u00E9fono admite n\u00FAmeros y espacios en blanco.");
+    //   alert("el campo tel\u00E9fono admite n\u00FAmeros y espacios en blanco.");
     }, 1000);
     setTimeout(function () {
       $(telefono).removeClass("form-error");
@@ -267,7 +278,7 @@ function validarFormulario() {
     $(comentario).addClass("form-error");
     $(comentario).addClass("color-error");
     setTimeout(function () {
-      alert("El campo comentarios es requerido");
+    //   alert("El campo comentarios es requerido");
     }, 1000);
     setTimeout(function () {
       $(comentario).removeClass("form-error");
@@ -279,7 +290,7 @@ function validarFormulario() {
     $(comentario).addClass("form-error");
     $(comentario).addClass("color-error");
     setTimeout(function () {
-      alert("El campo comentarios no puede tener mas de 1000 caracteres.");
+    //   alert("El campo comentarios no puede tener mas de 1000 caracteres.");
     }, 1000);
     setTimeout(function () {
       $(comentario).removeClass("form-error");

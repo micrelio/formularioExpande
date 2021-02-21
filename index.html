@@ -150,10 +150,6 @@ if ($response != null && $response->success) {
                     <textarea class="input message" rows="10" cols="40" maxlength="1000" id="comentario"
                         name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea>
                     <p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
-                    <br />
-
-
-
                     <!--pueden cambiar el lenguaje con el parametro hl-->
                     <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
                     <!--El site key de su sitio-->
@@ -163,10 +159,13 @@ if ($response != null && $response->success) {
                     <label for="terms">He leído y acepto <a href="">los terminos y condiciones.</a></label>
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
 
-
-                    <!-- <div class="text-box">
-                        <a href="#" class="btn btn-white btn-animate">click me</a>
-                    </div> -->
+                    <!-- https://codepen.io/joshuaward/pen/oGZrWN -->
+                    <button class="button btn-animate" type="button" name="enviar"
+                    id="enviar">
+                        <span class="submit fa fa-paper-plane"></span>
+                        <span class="loading"><i class="fa fa-refresh"></i></span>
+                        <span class="check"><i class="fa fa-check"></i></span>
+                    </button>
 
 
                     <button class="fa fa-paper-plane btn btn-white btn-animate" type="button" name="enviar"
