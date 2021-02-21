@@ -1,5 +1,33 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: juliomorales
+ * Website: http://www.nworldt.net
+ * Date: 21/07/16
+ * Time: 11:44 PM
+ */
+// Incluir libreria de recaptcha de Google
+// require_once "recaptchalib.php";
 
+
+// // tu secret key
+// $publicKey = "6LcBgVoaAAAAAAEt7-fWXw1MomP4kWSywzYaMii5";
+// $secret = "6LcBgVoaAAAAAJ2nLbx3BMR7DShc077ZVSLAross";
+
+// echo "llega";
+
+// $response = null;
+
+// // comprueba la clave secreta
+// $reCaptcha = new ReCaptcha($secret);
+// if ($_POST["g-recaptcha-response"]) {
+//     $response = $reCaptcha->verifyResponse(
+//         $_SERVER["REMOTE_ADDR"],
+//         $_POST["g-recaptcha-response"]
+//     );
+// }
+  
+// $showMessage = false;
 
 
 // Envio de Email
@@ -23,13 +51,13 @@ if ($response != null && $response->success) {
     }
     if (mail($to, $subject, $body, $headers)) {
          // current time
- echo date('h:i:s') . "\n";
+//  echo date('h:i:s') . "\n";
 
- // sleep for 10 seconds
- sleep(10);
+//  // sleep for 10 seconds
+//  sleep(10);
  
- // wake up !
- echo date('h:i:s') . "\n";
+//  // wake up !
+//  echo date('h:i:s') . "\n";
         $error = false;
         // echo "ENVIADO";
         $message = 'Enviado con exito';
