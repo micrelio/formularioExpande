@@ -24,10 +24,26 @@ body {
 #preloader:before {
   content: "";
   position: fixed;
-  top:0;
-  left:0;
-  /* top: calc(50% - 30px);
-  left: calc(50% - 30px); */
+  /* top:0;
+  left:0; */
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid orangered;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+ .espera {
+   
+  content: "";
+  position: fixed;
+   top: calc(50% - 30px);
+  left: calc(50% - 30px);
   border: 6px solid orangered;
   border-top-color: #fff;
   border-bottom-color: #fff;
