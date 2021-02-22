@@ -67,21 +67,30 @@ function espera() {
 }
 
 //---boton envio---------------------
-const button = document.querySelector('.button');
-const submit = document.querySelector('.submit');
+
 
 function toggleClass() {
-	this.classList.toggle('active');
+	enviar.classList.toggle('active');
 }
 
-function addClass() {
-	this.classList.add('finished');
-}
+function addClassOk() {
+	enviar.classList.add('finishedOk');
+	// enviar.classList.toggle('active');
+	
 
-button.addEventListener('click', toggleClass);
-button.addEventListener('transitionend', toggleClass);
-button.addEventListener('transitionend', addClass);
+}
+function addClassNo() {
+	console.log('no');
+	enviar.classList.add('finishedNo');
+	// enviar.classList.toggle('active');
+
+}
 //-----------------------------------------------------
+
+
+
+
+
 
 // function esperaSalida() {
 // 	 $("#preloader")
@@ -173,7 +182,20 @@ function validarFormulario() {
   //   console.log("2");
 
   if (!nombre.value) {
-	espera();
+	// espera();
+	// enviar.addEventListener('click', toggleClass);
+	// toggleClass();
+
+	// enviar.addEventListener('transitionend', addClassOk);
+
+	//---bueno-------------------
+	 addClassNo();
+
+
+// $(enviar).addClass('active');
+
+
+
         $(nombre).addClass("form-error");
     $(nombre).addClass("color-error");
     setTimeout(function () {
@@ -301,7 +323,13 @@ function validarFormulario() {
   }
 
   if (verificar == true) {
-	espera();
+
+
+	toggleClass();
+
+	// addClassOk();
+
+	// espera();
 
     $("body").addClass("form-submitted");
     $("#form-head").addClass("form-submitted");

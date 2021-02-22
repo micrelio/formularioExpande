@@ -169,8 +169,9 @@ p {
   display: block;
 }
 
-.fa-close::before {
-  display: none;
+//---si falla hay que activarlo para que se borre la x al cerrar------------
+.feo::before {
+  // display: none;
 }
 
 .expand.fa-pencil::before {
@@ -439,7 +440,7 @@ body {
     margin: 10px 10px 10px 0px;
     padding: 1.5rem 3.125rem;
     background-color: $color-0;
-    color: $color-4;
+    color: $color-1;
     // border: none;
     font-size: 35px;
     border-radius: 0.3125rem;
@@ -453,11 +454,11 @@ body {
     //transition: $base-duration ease;
     overflow: hidden;
 
-    background: rgb(102, 181, 255);
+    background: #f72f4e; //rgb(102, 181, 255);
     /*añadimos sombras inferiores*/
-    -moz-box-shadow: 0px 5px 0px 0px rgb(0, 105, 202);
-    -webkit-box-shadow: 0px 5px 0px 0px rgb(0, 105, 202);
-    box-shadow: 0px 5px 0px 0px rgb(0, 105, 202);
+    -moz-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.7);
     /*añadimos un efecto de transición para que el efecto sea progresivo*/
     // transition: all 0.1s ease-in-out;
     // -webkit-transition: all 0.1s ease-in-out;
@@ -495,6 +496,9 @@ body {
       }
 
       &:nth-of-type(3) {
+        display: none;
+      }
+      &:nth-of-type(4) {
         display: none;
       }
     }
@@ -540,7 +544,7 @@ body {
   }
 }
 
-.finished {
+.finishedOk {
   background-color: lighten($color-3, 10%);
 
   .submit {
@@ -552,6 +556,35 @@ body {
   }
 
   .check {
+    display: block !important;
+    font-size: 24px;
+    animation: scale 0.5s linear;
+
+    i {
+      transform-origin: center center;
+    }
+  }
+}
+
+
+.finishedNo {
+  background-color: lighten($color-4, 10%);
+// .fa-close{
+//   display: block;
+// }
+
+// .fa-close::before {
+//   display: block;
+// }
+  .submit {
+    display: none;
+  }
+
+  .loading {
+    display: none;
+  }
+
+  .bad {
     display: block !important;
     font-size: 24px;
     animation: scale 0.5s linear;
