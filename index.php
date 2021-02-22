@@ -164,12 +164,12 @@ if ($response != null && $response->success) {
                     <!--pueden cambiar el lenguaje con el parametro hl-->
                     <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
                     <!--El site key de su sitio-->
-                    <input type="checkbox" id="terms">
+                    <!-- <input type="checkbox" id="terms">
                     <label for="terms">
                         <p>He leído y acepto <a href="">los terminos y condiciones.</a></p>
-                    </label>
-                    <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
-
+                    </label> -->
+                    <div class="inputRecaptcha  g-recaptcha" id="recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
+</br>
                     <!-- https://codepen.io/joshuaward/pen/oGZrWN -->
                     <button class="button btn-animate" type="button" name="enviar" id="enviar">
                         <!-- <i class="fa fa-paper-plane"></i> -->
@@ -196,10 +196,10 @@ if ($response != null && $response->success) {
         </div>
         <div class="">
             <?php
-            if ($showMessage) {
-                echo !$error ? '<div class="bs-example-bg-classes"><p class="bg-success text-center">' . $message . '</p></div>' : '';
-                echo $error ? ' <div class="bs-example-bg-classes"><p class="bg-danger text-center">' . $message . '</p></div>' : '';
-            }
+            // if ($showMessage) {
+            //     echo !$error ? '<div class="bs-example-bg-classes"><p class="bg-success text-center">' . $message . '</p></div>' : '';
+            //     echo $error ? ' <div class="bs-example-bg-classes"><p class="bg-danger text-center">' . $message . '</p></div>' : '';
+            // }
             ?>
 
         </div>

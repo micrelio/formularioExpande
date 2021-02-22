@@ -186,6 +186,10 @@ function validarFormulario() {
     verificar = false;
     return false;
   }
+
+
+
+
   //PARA PONER NOMBRE Y APELLIDOS
   // else if(nombre.value.split(" ").length < 2){
   // alert("Esciba sus nombre completos por favor.");
@@ -300,15 +304,40 @@ function validarFormulario() {
     return false;
   }
 
+var response = grecaptcha.getResponse();
+if(response.length == 0){
+//   alert("Captcha no verificado");
+addClassNo();
+$(recaptcha).addClass("form-error");
+// $(recaptcha).addClass("color-error");
+setTimeout(function () {
+  //   alert("Escriba su recaptcha por favor.");
+}, 1000);
+setTimeout(function () {
+  $(recaptcha).removeClass("form-error");
+}, 1000);
+recaptcha.focus();
+verificar = false;
+return false;
+} 
+// else {
+//   alert("Captcha verificado");
+  
+// }
+
+
+
+
   if (verificar == true) {
     toggleClass();
     enviar.addEventListener("transitionend", addClassOk);
     $("body").addClass("form-submitted");
     $("#form-head").addClass("form-submitted");
     setTimeout(function () {
-      document.formulario.submit();
-        $(form).trigger("reset");
+    document.formulario.submit();
+       
     }, 3500);
+	// $(form).trigger("reset");
     // setTimeout(function () {
     //      $(form).trigger("reset");
     // }, 10000);
