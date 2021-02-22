@@ -1,8 +1,8 @@
 $(document).ready(function () {
 	console.log('inicio');
 	// espera();
-	if ($('#h').length) {
-		$('#h').delay(100).fadeOut('slow', function() {
+	if ($('#preloader').length) {
+		$('#preloader').delay(100).fadeOut('slow', function() {
 		//   $(this).remove();
 		});
 	  }
@@ -51,18 +51,18 @@ function toggleForm() {
   // $(".form-submitted").removeClass("form-submitted");
 }
 function espera() {
-	$("#h")
+	$("#preloader")
 	.add();
 
-	$("#h")
+	$("#preloader")
 	.delay(500)
 	.fadeIn("slow");
-	$("#h")
+	$("#preloader")
 	.delay(1000)
 	.fadeOut("slow", function () {
 	  console.log("dentro");
 	
-	//   $("#h").remove();
+	//   $("#preloader").remove();
 	});
 }
 
@@ -84,19 +84,19 @@ button.addEventListener('transitionend', addClass);
 //-----------------------------------------------------
 
 // function esperaSalida() {
-// 	 $("#h")
+// 	 $("#preloader")
 // 	.delay(500)
 // 	.fadeIn("slow");
 	
-// 	$("#h")
+// 	$("#preloader")
 // 	.delay(500)
 // 	.fadeOut("slow");
-// 	// $("#h")
+// 	// $("#preloader")
 // 	// .delay(1000)
 // 	// .fadeIn("slow", function () {
 // 	//   console.log("dentro");
 	
-// 	// //   $("#h").remove();
+// 	// //   $("#preloader").remove();
 // 	// });
 // }
 

@@ -1,3 +1,9 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../font-awesome/fontawesome-webfont.woff");
+}
+
 body {
   font-family: Roboto, sans-serif;
   width: 100%;
@@ -11,34 +17,6 @@ body {
 # Preloader
 --------------------------------------------------------------*/
 #preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #fff;
-}
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  /* top:0;
-  left:0; */
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid orangered;
-  border-top-color: #fff;
-  border-bottom-color: #fff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
-}
-
-#h {
   content: "";
   position: fixed;
   z-index: 9999;
@@ -76,9 +54,10 @@ body {
   }
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
   font-weight: 700;
   font-size: 4em;
   margin: 0;
@@ -106,14 +85,14 @@ h1, h2 {
 }
 
 .show-form-overlay.form-submitted .form-overlay {
-  background: #119DA4;
+  background: #119da4;
   -webkit-transition: background 0.6s;
   transition: background 0.6s;
 }
 
 #form-container {
   cursor: pointer;
-  color: #FFF;
+  color: #fff;
   z-index: 1000;
   position: absolute;
   margin: 0 auto;
@@ -207,7 +186,7 @@ h1, h2 {
 }
 
 #form-content form {
-  color: #FFF;
+  color: #fff;
   width: 100%;
   height: 100%;
   padding: 0 20px 20px 20px;
@@ -221,13 +200,14 @@ h1, h2 {
   font-size: 100%;
   padding: 0;
   margin: 0 20px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   -webkit-transition: all 0.8s 0.6s;
   transition: all 0.8s 0.6s;
 }
 
-#form-head h1, #form-head p {
+#form-head h1,
+#form-head p {
   padding: 0;
   margin: 0;
 }
@@ -254,6 +234,7 @@ h1, h2 {
 }
 
 .input {
+  font-family: FontAwesome;
   background: rgba(0, 0, 0, 0.2);
   display: block;
   height: 50px;
@@ -317,8 +298,10 @@ h1, h2 {
   font-size: 90%;
 }
 
-input, select, textarea {
-  color: #FFF;
+input,
+select,
+textarea {
+  color: #fff;
 }
 
 .input.message {
@@ -328,7 +311,7 @@ input, select, textarea {
 }
 
 .input.submit {
-  background-color: #FFF;
+  background-color: #fff;
   color: #f72f4e;
   font-size: 120%;
   height: 80px;
@@ -358,7 +341,7 @@ input, select, textarea {
 
 select option {
   background: #f72f4e;
-  color: #FFF;
+  color: #fff;
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -414,7 +397,7 @@ select option:disabled {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #FFF inset;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }
 
 /*---boton --------------*/
@@ -459,7 +442,8 @@ body {
   display: none;
 }
 
-.button {
+.button,
+.borrar {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -474,27 +458,31 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 20rem;
-  margin: 0;
-  margin: 10px;
+  float: left;
+  width: 10rem;
+  margin: 10px 10px 10px 0px;
   padding: 1.5rem 3.125rem;
   background-color: whitesmoke;
   color: #f72f4e;
-  border: none;
+  font-size: 35px;
   border-radius: 0.3125rem;
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
-  font-weight: 300;
+  -webkit-box-shadow: 0 -1.25rem 1rem -1.5rem rgba(0, 0, 0, 0.4), 0 0.5rem 1.75rem -0.25rem rgba(0, 0, 0, 0.3), 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -1.25rem 1rem -1.5rem rgba(0, 0, 0, 0.4), 0 0.5rem 1.75rem -0.25rem rgba(0, 0, 0, 0.3), 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   overflow: hidden;
+  background: #66b5ff;
+  /*añadimos sombras inferiores*/
+  -webkit-box-shadow: 0px 5px 0px 0px #0069ca;
+  box-shadow: 0px 5px 0px 0px #0069ca;
+  /*añadimos un efecto de transición para que el efecto sea progresivo*/
+  text-align: center;
+  vertical-align: middle;
 }
 
-.button .button:active {
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
-}
-
-.button:before {
+.button:before,
+.borrar:before {
   position: absolute;
   content: "";
   bottom: 0;
@@ -504,31 +492,45 @@ body {
   background-color: #54d98c;
 }
 
-.button span {
+.button span,
+.borrar span {
   position: absolute;
   line-height: 0;
 }
 
-.button span i {
+.button span i,
+.borrar span i {
   -webkit-transform-origin: center center;
           transform-origin: center center;
 }
 
-.button span:nth-of-type(1) {
+.button span:nth-of-type(1),
+.borrar span:nth-of-type(1) {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.button span:nth-of-type(2) {
+.button span:nth-of-type(2),
+.borrar span:nth-of-type(2) {
   top: 100%;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
   font-size: 24px;
 }
 
-.button span:nth-of-type(3) {
+.button span:nth-of-type(3),
+.borrar span:nth-of-type(3) {
   display: none;
+}
+
+.button:active,
+.borrar:active {
+  /*Gracias a que el elemento está en posición relativa, podemos bajarlo 4 px sin alterar el HTML*/
+  top: 4px;
+  /*bajamos el tamaño de la sombra para conseguir el efecto de profundidad*/
+  -webkit-box-shadow: 0px 1px 0px 0px #0069ca;
+  box-shadow: 0px 1px 0px 0px #0069ca;
 }
 
 .active {
@@ -671,37 +673,54 @@ body {
 }
 
 @-webkit-keyframes error {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  10%, 30%, 50%, 70%, 90% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     -webkit-transform: translateX(-6px);
             transform: translateX(-6px);
   }
-  20%, 40%, 60%, 80% {
+  20%,
+  40%,
+  60%,
+  80% {
     -webkit-transform: translateX(6px);
             transform: translateX(6px);
   }
 }
 
 @keyframes error {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  10%, 30%, 50%, 70%, 90% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     -webkit-transform: translateX(-6px);
             transform: translateX(-6px);
   }
-  20%, 40%, 60%, 80% {
+  20%,
+  40%,
+  60%,
+  80% {
     -webkit-transform: translateX(6px);
             transform: translateX(6px);
   }
 }
 
 @-webkit-keyframes wiggle {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: rotate(-15deg);
             transform: rotate(-15deg);
   }
@@ -712,7 +731,8 @@ body {
 }
 
 @keyframes wiggle {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: rotate(-15deg);
             transform: rotate(-15deg);
   }

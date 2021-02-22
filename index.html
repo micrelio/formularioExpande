@@ -100,6 +100,16 @@ if ($response != null && $response->success) {
     ?>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="./font-awesome/fontawesome-webfont.svg">
+    <link rel="stylesheet" href="./font-awesome/fontawersome.js">
+    <link rel="stylesheet" href="./font-awesome/fontawersome-webfont.eot">
+    <link rel="stylesheet" href="./font-awesome/fontawersome-webfont.ttf">
+    <link rel="stylesheet" href="./font-awesome/fontawersome-webfont.woff">
+    <link rel="stylesheet" href="./font-awesome/fontawersome-webfont.woff2">
+
+
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="./styles/normalize.min.css">
@@ -120,7 +130,7 @@ if ($response != null && $response->success) {
 
 <body id="body">
     <!-- <div id="preloader"></div> -->
-    <div id="h"></div>
+    <div id="preloader"></div>
 
 
     <div class="container">
@@ -139,15 +149,15 @@ if ($response != null && $response->success) {
                 </div>
 
 
-                <form role="form" action="" method="post" id="formulario" name="formulario" class="formularioContacto">
-                    <input class="input name" id="nombre" placeholder="Nombre" type="text" name="Nombre" />
+                <form role="form" action="" method="post" id="formulario" name="formulario" class="">
+                    <input class="input name" id="nombre" placeholder="&#xf007;  Nombre" type="text" name="Nombre" />
                     <!-- <input type="text"  name="direccion" id="direccion"/><br/>
                     <input type="text"  name="pais" id="pais"/><br/>
                     <input type="text"  name="web-site" id="web-site"/><br/> -->
 
-                    <input class="input email" placeholder="Email" id="email" type="email" name="Email" />
-                    <input class="input phone" placeholder="Telefono" id="telefono" type="tel" name="Telefono" />
-                    <textarea class="input message" rows="10" cols="40" maxlength="1000" id="comentario"
+                    <input class="input email" placeholder="&#xf003;  Email" id="email" type="email" name="Email" />
+                    <input class="input phone fa fa-phone" placeholder="&#xf095;  Teléfono" id="telefono" type="tel" name="Telefono" />
+                    <textarea class="input message" placeholder="&#xf0e5;  Mensaje" rows="10" cols="40" maxlength="1000" id="comentario"
                         name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea>
                     <p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
                     <!--pueden cambiar el lenguaje con el parametro hl-->
@@ -160,21 +170,22 @@ if ($response != null && $response->success) {
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
 
                     <!-- https://codepen.io/joshuaward/pen/oGZrWN -->
-                    <button class="button btn-animate" type="button" name="enviar"
-                    id="enviar">
-                        <span class="submit fa fa-paper-plane"></span>
+                    <button class="button btn-animate" type="button" name="enviar" id="enviar">
+                        <!-- <i class="fa fa-paper-plane"></i> -->
+                        <span class="submit"><i class="fa fa-paper-plane"></i></span>
                         <span class="loading"><i class="fa fa-refresh"></i></span>
                         <span class="check"><i class="fa fa-check"></i></span>
                     </button>
 
 
-                    <button class="fa fa-paper-plane btn btn-white btn-animate" type="button" name="enviar"
-                        id="enviar">Enviar</button>&nbsp;&nbsp;&nbsp;
+                    <!-- <button class="fa fa-paper-plane btn btn-white btn-animate" type="button" name="enviar"
+                        id="enviar">Enviar</button>&nbsp;&nbsp;&nbsp; -->
 
                     <!-- <input class='input submit' type='submit' value='Send Message' >
                     <button class='input submit' type="buton" class="fa fa-paper-plane " value='Send Message'></button> -->
-                    <input class="borrar" type="reset" value="Borrar Datos" /> &nbsp; &nbsp;
-
+                    <button class='borrar ' type="reset" value=''><span><i class="fa fa-eraser"></i></span></button>
+                    
+                    <!-- <input class="borrar" type="reset" value="Borrar" /> &nbsp; &nbsp; -->
                 </form>
             </div>
 
