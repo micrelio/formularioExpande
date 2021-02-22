@@ -1,13 +1,13 @@
 $(document).ready(function () {
-	console.log('inicio');
-	// espera();
-	if ($('#preloader').length) {
-		$('#preloader').delay(100).fadeOut('slow', function() {
-		//   $(this).remove();
-		});
-	  }
-
-
+  console.log("inicio");
+  // espera();
+  if ($("#preloader").length) {
+    $("#preloader")
+      .delay(100)
+      .fadeOut("slow", function () {
+        //   $(this).remove();
+      });
+  }
 });
 
 var formContainer = $("#form-container");
@@ -51,52 +51,43 @@ function toggleForm() {
   // $(".form-submitted").removeClass("form-submitted");
 }
 function espera() {
-	$("#preloader")
-	.add();
+  $("#preloader").add();
 
-	$("#preloader")
-	.delay(500)
-	.fadeIn("slow");
-	$("#preloader")
-	.delay(1000)
-	.fadeOut("slow", function () {
-	  console.log("dentro");
-	
-	//   $("#preloader").remove();
-	});
+  $("#preloader").delay(500).fadeIn("slow");
+  $("#preloader")
+    .delay(1000)
+    .fadeOut("slow", function () {
+      console.log("dentro");
+
+      //   $("#preloader").remove();
+    });
 }
 
 //---boton envio---------------------
 
-
 function toggleClass() {
-	enviar.classList.toggle('active');
+  enviar.classList.toggle("active");
 }
 
 function addClassOk() {
-	enviar.classList.add('finishedOk');
-	// enviar.classList.toggle('active');
-	
-
+  enviar.classList.add("finishedOk");
+  // enviar.classList.toggle('active');
 }
 function addClassNo() {
-	console.log('no');
-	enviar.classList.add('finishedNo');
-	// enviar.classList.toggle('active');
-
+  console.log("no");
+  enviar.classList.add("finishedNo");
+  // enviar.classList.toggle('active');
+  setTimeout(() => {
+    enviar.classList.remove("finishedNo");
+  }, 1000);
 }
 //-----------------------------------------------------
-
-
-
-
-
 
 // function esperaSalida() {
 // 	 $("#preloader")
 // 	.delay(500)
 // 	.fadeIn("slow");
-	
+
 // 	$("#preloader")
 // 	.delay(500)
 // 	.fadeOut("slow");
@@ -104,7 +95,7 @@ function addClassNo() {
 // 	// .delay(1000)
 // 	// .fadeIn("slow", function () {
 // 	//   console.log("dentro");
-	
+
 // 	// //   $("#preloader").remove();
 // 	// });
 // }
@@ -182,24 +173,11 @@ function validarFormulario() {
   //   console.log("2");
 
   if (!nombre.value) {
-	// espera();
-	// enviar.addEventListener('click', toggleClass);
-	// toggleClass();
-
-	// enviar.addEventListener('transitionend', addClassOk);
-
-	//---bueno-------------------
-	 addClassNo();
-
-
-// $(enviar).addClass('active');
-
-
-
-        $(nombre).addClass("form-error");
+    addClassNo();
+    $(nombre).addClass("form-error");
     $(nombre).addClass("color-error");
     setTimeout(function () {
-    //   alert("Escriba su nombre por favor.");
+      //   alert("Escriba su nombre por favor.");
     }, 1000);
     setTimeout(function () {
       $(nombre).removeClass("form-error");
@@ -245,7 +223,7 @@ function validarFormulario() {
     $(email).addClass("form-error");
     $(email).addClass("color-error");
     setTimeout(function () {
-    //   alert("Escriba su email por favor.");
+      //   alert("Escriba su email por favor.");
     }, 1000);
     setTimeout(function () {
       $(email).removeClass("form-error");
@@ -257,7 +235,7 @@ function validarFormulario() {
     $(email).addClass("form-error");
     $(email).addClass("color-error");
     setTimeout(function () {
-    //   alert("Escriba un email valido por favor.");
+      //   alert("Escriba un email valido por favor.");
     }, 1000);
     setTimeout(function () {
       $(email).removeClass("form-error");
@@ -276,7 +254,7 @@ function validarFormulario() {
     $(telefono).addClass("form-error");
     $(telefono).addClass("color-error");
     setTimeout(function () {
-    //   alert("Escriba un n\u00famero de tel\u00E9fono por favor.");
+      //   alert("Escriba un n\u00famero de tel\u00E9fono por favor.");
     }, 1000);
     setTimeout(function () {
       $(telefono).removeClass("form-error");
@@ -288,7 +266,7 @@ function validarFormulario() {
     $(telefono).addClass("form-error");
     $(telefono).addClass("color-error");
     setTimeout(function () {
-    //   alert("el campo tel\u00E9fono admite n\u00FAmeros y espacios en blanco.");
+      //   alert("el campo tel\u00E9fono admite n\u00FAmeros y espacios en blanco.");
     }, 1000);
     setTimeout(function () {
       $(telefono).removeClass("form-error");
@@ -300,7 +278,7 @@ function validarFormulario() {
     $(comentario).addClass("form-error");
     $(comentario).addClass("color-error");
     setTimeout(function () {
-    //   alert("El campo comentarios es requerido");
+      //   alert("El campo comentarios es requerido");
     }, 1000);
     setTimeout(function () {
       $(comentario).removeClass("form-error");
@@ -312,7 +290,7 @@ function validarFormulario() {
     $(comentario).addClass("form-error");
     $(comentario).addClass("color-error");
     setTimeout(function () {
-    //   alert("El campo comentarios no puede tener mas de 1000 caracteres.");
+      //   alert("El campo comentarios no puede tener mas de 1000 caracteres.");
     }, 1000);
     setTimeout(function () {
       $(comentario).removeClass("form-error");
@@ -323,23 +301,17 @@ function validarFormulario() {
   }
 
   if (verificar == true) {
-
-
-	toggleClass();
-
-	// addClassOk();
-
-	// espera();
-
+    toggleClass();
+    enviar.addEventListener("transitionend", addClassOk);
     $("body").addClass("form-submitted");
     $("#form-head").addClass("form-submitted");
-
     setTimeout(function () {
       document.formulario.submit();
-    }, 10000);
-    setTimeout(function () {
-      //   $(form).trigger("reset");
-    }, 10000);
+        $(form).trigger("reset");
+    }, 3500);
+    // setTimeout(function () {
+    //      $(form).trigger("reset");
+    // }, 10000);
   }
 }
 function limpiarFormulario() {

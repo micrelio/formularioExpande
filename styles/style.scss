@@ -430,7 +430,6 @@ body {
   .button,
   .borrar {
     position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -510,9 +509,9 @@ body {
   /*Gracias a que el elemento está en posición relativa, podemos bajarlo 4 px sin alterar el HTML*/
   top: 4px;
   /*bajamos el tamaño de la sombra para conseguir el efecto de profundidad*/
-  -moz-box-shadow: 0px 1px 0px 0px rgb(0, 105, 202);
-  -webkit-box-shadow: 0px 1px 0px 0px rgb(0, 105, 202);
-  box-shadow: 0px 1px 0px 0px rgb(0, 105, 202);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
 }
 
 .active {

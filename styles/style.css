@@ -532,8 +532,8 @@ body {
   /*Gracias a que el elemento está en posición relativa, podemos bajarlo 4 px sin alterar el HTML*/
   top: 4px;
   /*bajamos el tamaño de la sombra para conseguir el efecto de profundidad*/
-  -webkit-box-shadow: 0px 1px 0px 0px #0069ca;
-  box-shadow: 0px 1px 0px 0px #0069ca;
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
 }
 
 .active {
