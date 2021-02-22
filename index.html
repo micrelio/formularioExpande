@@ -142,10 +142,10 @@ if ($response != null && $response->success) {
             <span class='icon fa fa-close' id='form-close'></span>
             <div id='form-content'>
                 <div id='form-head'>
-                    <h1 class='pre'>CONTACTO</h1>
-                    <p class='pre'>Micro Developer</p>
-                    <h1 class='post'>Gracias!</h1>
-                    <p class='post'>Le contestaré con mayor brevedad posible.</p>
+                    <h2 class='pre'>CONTACTO</h2>
+                    <h1 class='pre'>Micro Developer</h1>
+                    <h2 class='post'>Gracias!</h2>
+                    <h1 class='post'>Le contestaré con mayor brevedad posible.</h1>
                 </div>
 
 
@@ -156,17 +156,18 @@ if ($response != null && $response->success) {
                     <input type="text"  name="web-site" id="web-site"/><br/> -->
 
                     <input class="input email" placeholder="&#xf003;  Email" id="email" type="email" name="Email" />
-                    <input class="input phone fa fa-phone" placeholder="&#xf095;  Teléfono" id="telefono" type="tel" name="Telefono" />
-                    <textarea class="input message" placeholder="&#xf0e5;  Mensaje" rows="10" cols="40" maxlength="1000" id="comentario"
-                        name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea>
+                    <input class="input phone fa fa-phone" placeholder="&#xf095;  Teléfono" id="telefono" type="tel"
+                        name="Telefono" />
+                    <textarea class="input message" placeholder="&#xf0e5;  Mensaje" rows="10" cols="40" maxlength="1000"
+                        id="comentario" name="comentario" onkeypress="calcular()" onkeyup="calcular()"></textarea>
                     <p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
                     <!--pueden cambiar el lenguaje con el parametro hl-->
                     <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
                     <!--El site key de su sitio-->
-                    <!-- <input class="input g-recaptcha" data-sitekey="<?php #echo $publicKey; 
-                                                                        ?>"placeholder="" id="" type="checkbox" name="" /> -->
                     <input type="checkbox" id="terms">
-                    <label for="terms">He leído y acepto <a href="">los terminos y condiciones.</a></label>
+                    <label for="terms">
+                        <p>He leído y acepto <a href="">los terminos y condiciones.</a></p>
+                    </label>
                     <div class=" g-recaptcha" data-sitekey="<?php echo $publicKey; ?>"></div>
 
                     <!-- https://codepen.io/joshuaward/pen/oGZrWN -->
@@ -184,7 +185,7 @@ if ($response != null && $response->success) {
                     <!-- <input class='input submit' type='submit' value='Send Message' >
                     <button class='input submit' type="buton" class="fa fa-paper-plane " value='Send Message'></button> -->
                     <button class='borrar ' type="reset" value=''><span><i class="fa fa-eraser"></i></span></button>
-                    
+
                     <!-- <input class="borrar" type="reset" value="Borrar" /> &nbsp; &nbsp; -->
                 </form>
             </div>
